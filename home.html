@@ -1,0 +1,572 @@
+<html>
+    <head>
+        <title>Tech point</title>
+        <link rel="stylesheet" href="dbms_w.css">
+    </head>
+        <body>
+          <div class="parent">
+<div class="sidebar">
+
+    <!-- Links -->
+    <ul>
+        <li class="bar-heading">DBMS</li>
+        <li class="bar-list">
+        <a href="#introduction">Introduction</a>
+      </li>
+      <li class="bar-list">
+        <a href="#file_vs_dbms">File system vs DBMS</a>
+      </li>
+      <li class="bar-list">
+        <a href="#e-rmodel">E-R MODEL</a>
+      </li>
+      <li class="bar-list">
+        <a href="#relational_m">Relational DM</a>
+      </li>
+      <li class="bar-list">
+        <a href="#constraints">Constraints</a>
+      </li>
+      <li class="bar-list">
+        <a href="#SQL">SQL</a>
+      </li>
+      <li class="bar-list">
+        <a href="#plsql">PL/SQL</a>
+      </li>
+    </ul>
+</div>
+
+<div class="content-home">
+  <section id="introduction">
+  <h2 class="heading-3-i">Introduction:</h2>
+  <p class="content1">A Database Management System (DBMS) is a software system that is designed to manage and organize data in a structured manner. It allows users to create, modify, and query a database, as well as manage the security and access controls for that database.</p>
+
+  <h2 class="heading-3">What is Database</h2>
+  <p class="content1">The database is a collection of inter-related data which is used to retrieve, insert and delete the data efficiently. It is also used to organize the data in the form of a table, schema, views, and reports, etc.</p>
+  <p class="content1"><b>For example:</b> The college Database organizes the data about the admin, staff, students and faculty etc.</p>
+
+  <h2 class="heading-4">Advantages of DBMS</h2>
+  <ol>
+    <li class="list"><b>Better Data Transferring:</b> Database management creates a place where users have an advantage of more and better-managed data. Thus making it possible for end-users to have a quick look and to respond fast to any changes made in their environment.</li>
+    <li class="list"><b>Better Data Security:</b> The more accessible and usable the database, the more it is prone to security issues. As the number of users increases, the data transferring or data sharing rate also increases thus increasing the risk of data security. It is widely used in the corporate world where companies invest money, time, and effort in large amounts to ensure data is secure and is used properly. A Database Management System (DBMS) provides a better platform for data privacy and security policies thus, helping companies to improve Data Security.</li>
+    <li class="list"><b>Minimized Data Inconsistency:</b> Data inconsistency occurs between files when different versions of the same data appear in different places.</li>
+    <li class="list"><b>Data abstraction:</b> The major purpose of a database system is to provide users with an abstract view of the data. Since many complex algorithms are used by the developers to increase the efficiency of databases that are being hidden by the users through various data abstraction levels to allow users to easily interact with the system.</li>
+    <li class="list"><b>Reduction in data Redundancy:</b> When working with a structured database, DBMS provides the feature to prevent the input of duplicate items in the database. for e.g. – If there are two same students in different rows, then one of the duplicate data will be deleted.</li>
+  </ol>
+  <h2 class="heading-4">Disadvantages of DBMS</h2>
+  <ol>
+    <li class="list"><b>Cost of hardware and software:</b> This is the first disadvantage of DBMS. This is because to run the DBMS, there is must need for high-speed processors and large memory size. Nowadays, in every field, a large amount of data needs to be stored safely with security. But nowadays, the cost of a high-speed processor and large memory storage is very expensive in hardware and software.</li>
+    <li class="list"><b>Frequency Upgrade:</b> we need to stay up-to-date about the latest technologies and developments in the market. The DBMS vendors frequently upgrade the products to add new functionality to the systems. New upgrade versions of the software often come bundled.</li>
+    <li class="list"><b>Scalability:</b> The DBMS system may need help to handle increasing database size. In order to understand this, let’s go through an example. Suppose you started a startup a few years back, and the organization has grown significantly. Due to the growth, you would have a larger database in comparison to the early days.</li>
+    <li class="list"><b>Huge Size:</b> A database contains a large amount of data, especially for bigger organisations. This data may even increase as more data is updated into the database. All of these leads to a large size of the database. </li>
+    <li class="list"><b>Database Failure:</b> All the relevant data for any company is stored in a database. So it is imperative that the database works in optimal condition and there are no failures. A database failure can be catastrophic and can lead to loss or corruption of very important data.</li>
+  </ol>
+</section>
+
+
+    <!-- TABLE -->
+    <section id="file_vs_dbms">
+  <h2 class="heading-4-t">File System vs DBMS:</h2>
+  <table class="file-dbms">
+    <tr>
+      <th class="table-imp-head">Basis</th>
+      <th class="table-imp-head">File System</th>
+      <th class="table-imp-head">DBMS</th>
+    </tr>
+    <tr>
+      <td class="table-imp"><b>Structure</b></td>
+      <td>The file system is software that manages and organizes the files in a storage medium within a computer.</td>
+      <td>DBMS is software for managing the database.</td>
+    </tr>
+    <tr>
+      <td class="table-imp"><b>Data Redundancy</b></td>
+      <td>Redundant data can be present in a file system.</td>
+      <td>In DBMS there is no redundant data.</td>
+    </tr>
+    <tr>
+      <td class="table-imp"><b>Backup and Recovery</b></td>
+      <td>It doesn't provide backup and recovery of data if it is lost.</td>
+      <td>It provides backup and recovery of data even if it is lost.</td>
+    </tr>
+    <tr>
+      <td class="table-imp"><b>Query processing</b></td>
+      <td>There is no efficient query processing in the file system.</td>
+      <td>Efficient query processing is there in DBMS.</td>
+    </tr>
+    <tr>
+      <td class="table-imp"><b>Consistency</b></td>
+      <td>There is less data consistency in the file system.</td>
+      <td>There is more data consistency because of the process of normalization.</td>
+    </tr>
+    <tr>
+      <td class="table-imp"><b>Complexity</b></td>
+      <td>It is less complex as compared to DBMS.</td>
+      <td>It has more complexity in handling as compared to the file system.</td>
+    </tr>
+    <tr>
+      <td class="table-imp"><b>Security Constraints</b></td>
+      <td>File systems provide less security in comparison to DBMS.</td>
+      <td>DBMS has more security mechanisms as compared to file systems.</td>
+    </tr>
+    <tr>
+      <td class="table-imp"><b>User Access</b></td>
+      <td>Only one user can access data at a time.</td>
+      <td>Multiple users can access data at a time.</td>
+    </tr>
+    <tr>
+      <td class="table-imp"><b>Sharing</b></td>
+      <td>Data is distributed in many files. So, not easy to share data</td>
+      <td>Due to centralized nature sharing is easy</td>
+    </tr>
+    <tr>
+      <td class="table-imp"><b>Integrity Constraints</b></td>
+      <td>Integrity Constraints are difficult to implement</td>
+      <td>Integrity constraints are easy to implement</td>
+    </tr>
+  </table>
+</section>
+
+<section id="e-rmodel">
+                <h3 class="heading-3">Entity Relationship Model (ERM)</h3>
+                <p class="content1">Entity Relational model is a model for identifying entities to be represented in the database and representation of how those entities are related. It specifies enterprise schema that represents the overall logical structure of a database graphically. </p>
+                <h3 class="heading-4">Features of ERM: </h3>
+                <ul class="list">
+                    <li>E-R diagrams are used to represent E-R model in a database, which makes them easy to be converted into relations (tables).</li>
+                    <li>E-R diagrams provide the purpose of real-world modeling of objects which makes them intently useful.</li>
+                    <li>E-R diagrams require no technical knowledge and no hardware support.</li>
+                    <li>These diagrams are very easy to understand and easy to create even by a naive user. </li>
+                    <li>It gives a standard solution of visualizing the data logically.</li>
+                </ul>
+
+                <h3 class="heading-4">Components of ER Model</h3>
+                <ul>
+                    <li class="list"><b>Entity: </b>An Entity may be an object with a physical existence a particular person, car, house, or employee or it may be an object with a conceptual existence a company, a job, or a university course.</li>
+                    <li class="list"><b>Entity type: </b>The entity type is the fundamental building block for describing the structure of data with the Entity Data Model (EDM).</li>
+                    <li class="list"><b>Entity set: </b>An Entity is an object of Entity Type and a set of all entities is called as an entity set.</li>
+                </ul>
+
+                <!-- types_of_entities -->
+                <h3 class="heading-4">Types of Entities:</h3>
+                <ul>
+                    <li class="list"><b>Strong entity: </b>A strong entity is not dependent on any other entity in the schema. A strong entity will always have a primary key. Strong entities are represented by a single rectangle. The relationship of two strong entities is represented by a single diamond. 
+                        Various strong entities, when combined together, create a strong entity set. </li>
+                    <li class="list"><b>Weak type: </b>A weak entity is dependent on a strong entity to ensure its existence. Unlike a strong entity, a weak entity does not have any primary key. It instead has a partial discriminator key. A weak entity is represented by a double rectangle. </li>
+                    </ul>
+                    <p class="alter">The relation between one strong and one weak entity is represented by a double diamond. This relationship is also known as identifying relationship.</p>
+
+
+                <!-- attributes -->
+                <h3 class="heading-4">Attributes</h3>
+                <p class="content1">Attributes are the properties that define the entity type. For example, Roll_No, Name, DOB, Age, Address, Mobile_No are the attributes that define entity type Student. In ER diagram, the attribute is represented by an oval. </p>
+                <p class="alter">Types of attributes: </p>
+                <ul>
+                    <li class="list"><b>Simple attribute: </b>An attribute that cannot be further subdivided into components is a simple attribute. </li>
+                    <li class="list"><b>Key attribute: </b>The attribute which uniquely identifies each entity in the entity set is called key attribute.For example, Roll_No will be unique for each student. In ER diagram, key attribute is represented by an oval with underlying lines.</li>
+                    <li class="list"><b>Composite attribute: </b>An attribute that composed of many other attribute is called as composite attribute. For example, Address attribute of student Entity type consists of Street, City, State, and Country. In ER diagram, composite attribute is represented by an oval comprising of ovals.</li>
+                    <li class="list"><b>Multivalued attribute: </b>An attribute consisting more than one value for a given entity. For example, Phone_No (can be more than one for a given student). In ER diagram, a multivalued attribute is represented by a double oval. </li>
+                    <li class="list"><b>Multivalued attribute: </b>An attribute consisting more than one value for a given entity. For example, Phone_No (can be more than one for a given student). In ER diagram, a multivalued attribute is represented by a double oval. </li>
+                    <li class="list"><b>Derived attribute: </b>An attribute that can be derived from other attributes of the entity type is known as a derived attribute. e.g.; Age (can be derived from DOB). In ER diagram, the derived attribute is represented by a dashed oval.  </li>
+                </ul>
+              </section>
+
+              <!-- relation model -->
+              <section id="relational_m">
+              <h3 class="heading-3">Relational Model</h3>
+              <p class="content1">A relational database is a type of database that stores and provides access to data points that are related to one another. Relational databases are based on the relational model, an intuitive, straightforward way of representing data in tables.</p>
+              <h3 class="heading-4">Important Terms:</h3>
+              <ul>
+                <li class="list"><b>Atttibute: </b>Attributes are the properties that define a relation.</li>
+                <p class="syntax-head-r">Example: </p>
+                <p class="content1-r">ROLL_NO, NAME</p>
+                <li class="list"><b>Relation Schema: </b>A relation schema represents the name of the relation with its attributes.</li>
+                <p class="syntax-head-r">Example: </p>
+                <p class="content1-r">STUDENT (ROLL_NO, NAME, ADDRESS, PHONE, and AGE) is the relation schema for STUDENT</p>
+                <li class="list"><b>Tuple: </b>Each row in the relation is known as a tuple.</li>
+                <li class="list"><b>Relation Instance: </b>The set of tuples of a relation at a particular instance of time is called a relation instance.</li>
+                <li class="list"><b>Degree: </b>The number of attributes in the relation is known as the degree of the relation.</li>
+                <li class="list"><b>Cardinality: </b>The number of tuples in a relation is known as cardinality.</li>
+                <li class="list"><b>Column: </b>The column represents the set of values for a particular attribute.</li>
+                <li class="list"><b>NULL Values: </b>The value which is not known or unavailable is called a NULL value.</li>
+              </ul>
+            </section>
+              <!-- Constraints -->
+
+
+              <section id="constraints">
+                <h2 class="heading-3">What are Constraints</h2>
+                <p class="content1">Constraints is a technique through which we can restrict a particular column or multiple columns of a table.</p>
+                <p class="content1">Constraints can be categorized into two types:</p>
+                <ol>
+                  <li class="command-desc"><b>Table level constraints: </b></li>
+                  <p class="content1">A table level constraint can be define when we are creating a table or modifing the structure of the table.</p>
+                  <!-- EXAMPLE -->
+                  <li class="command-desc"><b>Column level constraints: </b></li>
+                  <p class="content1">A column level constraint can only be define when we are definig a column in the table.</p>
+                  <!-- EXAMPLE -->
+                </ol>
+            
+                <h3 class="heading-4">Types of constriants:</h3>
+                <ul>
+                  <li class="command-desc"><b>Primary Key: </b>We can define a particular column or multiple columns as a primary key in the table.
+                  We can't have more than one primary key in the table.<br>
+                When we defined a primary key then those column or columns will be unique and can't have a NULL value within it.
+              A primary is a column level as well as table level constraint</li>
+                <P class="syntax-head">Syntax for table level: </P>
+                <p class="syntax">CREATE TABLE table_name(column_name1 datatype, column_name2 datatype, column_name_n datatype, PRIMARY KEY(column_name1, column_name2));</p>
+                <P class="syntax-head">Example:</P>
+                <img src="img/PRI_TABLE_LVL.png" alt="pk_table">
+            
+                <P class="syntax-head">Syntax for column level: </P>
+                <p class="syntax">CREATE TABLE table_name(column_name1 datatype, column_name2 datatype PRIMARY KEY, column_name_n datatype);</p>
+                <P class="syntax-head">Example:</P>
+                <img src="img/PRI_COL_LVL.png" alt="pk_col">
+            
+                <li class="command-desc"><b>Foreign Key: </b>It's a refferencial integrity key A Foreign key and can uniquely identify each row in a another table.</li>
+                <P class="syntax-head">Syntax: </P>
+              <p class="syntax">CREATE TABLE table_name(column_name1 datatype, column_name_n datatype, PRIMARY KEY (column_name1), FOREIGN KEY (column_name_n) REFERENCES reference_table_name(column_name_n));</p>
+              <P class="syntax-head">Example:</P>
+                <img src="img/F_KEY.png" alt="fk_key">
+            
+                  <li class="command-desc"><b>DEFAULT: </b>This constraint specifies a default value for the column when no value is specified by the user.</li>
+                  <P class="syntax-head">Syntax for table level: </P>
+                <p class="syntax">CREATE TABLE table_name(column_name1 datatype DEFAULT 'value',column_name_n datatype);</p>
+                <P class="syntax-head">Example:</P>
+                <img src="img/DEFAULT_KEY.png" alt="default_constraint">
+            
+                  <li class="command-desc"><b>Check: </b>This constraint helps to validate the values of a column to meet a particular condition. That is, it helps to ensure that the value stored in a column meets a specific condition.</li>
+                  <P class="syntax-head">Syntax: </P>
+                <p class="syntax">CREATE TABLE table_name(column_name1 datatype, column_name_n datatype, CHECK (condition));</p>
+                <P class="syntax-head">Example:</P>
+                <img src="img/CHECK_KEY.png" alt="check_constraint">
+            
+                  <li class="command-desc"><b>Not Null: </b>This constraint tells that we cannot store a null value in a column. That is, if a column is specified as NOT NULL then we will not be able to store null in this particular column any more.</li>
+                  <P class="syntax-head">Syntax: </P>
+                <p class="syntax">CREATE TABLE table_name(column_name1 datatype NOT NULL, column_name_n datatype);</p>
+                <P class="syntax-head">Example:</P>
+                <img src="img/NOT_NULL.png" alt="not_null_constraint">
+            
+                  <li class="command-desc"><b>UNIQUE: </b>This constraint when specified with a column, tells that all the values in the column must be unique. That is, the values in any row of a column must not be repeated.</li>
+                  <P class="syntax-head">Syntax: </P>
+                <p class="syntax">CREATE TABLE table_name(column_name1 datatype UNIQUE, column_name_n datatype);</p>
+                <P class="syntax-head">Example:</P>
+                <img src="img/UNIQUE_KEY.png" alt="unique_constraint">
+                </ul>
+              </section>
+
+              <!-- SQL -->
+  <section id="SQL">
+  <h2 class="heading-3">What is SQL</h2>
+  <p class="content1">Structured Query Language (SQL) is a standard Database language that is used to create, maintain and retrieve the relational database. SQL uses certain commands like Create, Drop, Insert, etc. to carry out the required tasks.</p>
+  <p class="content1">These SQL commands are mainly categorized into five categories as: </p>
+  <ol>
+    <li class="decimal-list">DDL - Data Definition Language</li>
+    <li class="decimal-list">DQL - Data Query Language</li>
+    <li class="decimal-list">DML - Data Manipulation Language</li>
+    <li class="decimal-list">DCL - Data Control Language</li>
+    <li class="decimal-list">TCL - Transaction Control Language</li>
+  </ol>
+  <h3 class="heading-4">DDL (Data Definition Language): </h3>
+  <p class="content1">It simply deals with descriptions of the database schema and is used to create and modify the structure of database objects in the database. DDL is a set of SQL commands used to create, modify, and delete database structures but not data.</p>
+  <p class="command-x">DDL commands: </p>
+  <ul>
+    <li class="command-desc"><b>CREATE: </b> It is used to create a new table in the database.</li>
+    <P class="syntax-head">Syntax:</P>
+    <p class="syntax">CREATE TABLE table_name (column_name datatype,[...]);</p>
+    <P class="syntax-head">Example:</P>
+    <img src="img/CREATE_TABLE_EXAMPLE.png" alt="create_table">
+
+    <li class="command-desc"><b>DROP: </b>It is used to delete both the structure and record stored in the table.</li>
+    <P class="syntax-head">Syntax:</P>
+    <p class="syntax">DROP TABLE table_name;</p>
+    <P class="syntax-head">Example:</P>
+    <img src="img/DDL_DROP.png" alt="drop_table">
+
+    <li class="command-desc"><b>ALTER: </b>This is used to alter the structure of the database.</li>
+    <p class="alter">* To add a new column in the table:</p>
+    <P class="syntax-head">Syntax:</P>
+    <p class="syntax">ALTER TABLE table_name ADD(column_name datatype,[...]); </p>
+    <P class="syntax-head">Example:</P>
+    <img src="img/DDL_ALTER_ADD.png" alt="alter_add">
+ 
+    <p class="alter" >Drop column from the table: </p>
+        <P class="syntax-head">Syntax:</P>
+        <p class="syntax">ALTER TABLE table_name DROP COLUMN column_name; </p>
+        <P class="syntax-head">Example:</P>
+    <img src="img/DDL_ALTER_DROP.png" alt="alter_drop">
+     
+        <p class="alter">Modify column: </p>
+        <p class="syntax-head">Syntax:</p>
+        <p class="syntax">ALTER TABLE table_name MODIFY column_name datatype; </p>
+        <P class="syntax-head">Example:</P>
+    <img src="img/DDL_ALTER_MODIFY.png" alt="alter_modify">
+   
+    <li class="command-desc"><b>TRUNCATE: </b>This is used to remove all records from a table, including all spaces allocated for the records are removed.</li>
+    <P class="syntax-head">Syntax:</P>
+    <p class="syntax">TRUNCATE TABLE table_name;</p>
+    <P class="syntax-head">Example:</P>
+    <img src="img/DDL_TRUNCATE.png" alt="truncate_table">
+
+    <li class="command-desc"><b>RENAME: </b>This is used to rename an object existing in the database.</li>
+    <P class="syntax-head">Syntax:</P>
+    <p class="syntax">RENAME old_table_name TO new_table_name;</p>
+    <P class="syntax-head">Example:</P>
+    <img src="img/DDL_ALTER_RENAME.png" alt="rename_table">
+ 
+  </ul>
+
+
+  <h3 class="heading-4">DQL (Data Query Language):</h3>
+  <p class="content1">The DML commands in Structured Query Language change the data present in the SQL database. We can easily access, store, modify, update and delete the existing records from the database using DML commands.</p>
+  <p class="command-x">DML commands:</p>
+  <ul>
+    <li class="command-desc"><b>SELECT: </b> The SELECT command shows the records of the specified table. It also shows the particular record of a particular column by using the WHERE clause.</li>
+  </ul>
+      <P class="syntax-head">Syntax:</P>
+      <p class="syntax">SELECT column_name1,...,column_name_n FROM table_name;</p>
+      <P class="syntax-head">Example:</P>
+    <img src="img/SELELCT_EXAMPLE.png" alt="select">
+
+
+  <h3 class="heading-4">DML (Data Manipulation Language): </h3>
+  <p class="content1">The DML commands in Structured Query Language change the data present in the SQL database. We can easily access, store, modify, update and delete the existing records from the database using DML commands.</p>
+  <p class="command-x">DML commands:</p>
+  <ul>
+    <li class="command-desc"><b>INSERT: </b>This allows users to insert data in database tables.</li>
+    <P class="syntax-head">Syntax:</P>
+    <p class="syntax">INSERT INTO table_name(column_name1,...,column_name_n) VALUES(value_1,...,value_n);</p>
+    <P class="syntax-head">Example:</P>
+    <img src="img/INSERT_INTO_EXAMPLE.png" alt="insert">
+    
+    <li class="command-desc"><b>UPDATE: </b>This allows users to update or modify the existing data in database tables.</li>
+    <P class="syntax-head">Syntax:</P>
+    <p class="syntax">UPDATE table_name SET[column_name1 = value_1,...,column_name_n = value_n] WHERE condition;</p>
+    <P class="syntax-head">Example:</P>
+    <img src="img/DML_UPDATE_EXAMPLE.png" alt="update">
+    
+    <li class="command-desc"><b>DELETE: </b>This allows users to remove single or multiple existing records from the database tables.</li>
+    <P class="syntax-head">Syntax:</P>
+    <p class="syntax">DELETE table_name WHERE condition;</p>
+    <P class="syntax-head">Example:</P>
+    <img src="img/DML_DELETE_EXAMPLE.png" alt="delete">
+  
+
+  <h3 class="heading-4">DCL (Data Control Language): </h3>
+  <p class="content1">DCL includes commands such as GRANT and REVOKE which mainly deal with the rights, permissions, and other controls of the database system. </p>
+  <p class="command-x">DCL commands:</p>
+  <ul>
+    <li class="command-desc"><b>GRANT: </b>This command gives users access privileges to the database.</li>
+    <P class="syntax-head">Syntax:</P>
+    <p class="syntax">GRANT privileges_names ON object_name TO user_name;</p>
+    <!-- EXAMPLE -->
+    <li class="command-desc"><b>REVOKE: </b>This command withdraws the user's access privileges given by using the GRANT command.</li>
+    <P class="syntax-head">Syntax:</P>
+    <p class="syntax">REVOKE privileges_names ON object_name from user_name;</p>
+    <!-- EXAMPLE -->
+
+
+    <h3 class="heading-4">TCL (Transaction Control Language): </h3>
+    <p class="content1">TCL commands can only use with DML commands like INSERT, DELETE and UPDATE only. These operations are automatically committed in the database that's why they cannot be used while creating tables or dropping them.</p>
+  <p class="command-x">TCL commands:</p>
+  <ul>
+    <li class="command-desc"><b>COMMIT: </b>Commit command is used to save all the transactions to the database.</li>
+    <P class="syntax-head">Syntax:</P>
+    <p class="syntax">COMMIT;</p>
+    <P class="syntax-head">Example:</P>
+    <img src="img/TCL_COMMIT.png" alt="commit_tcl">
+   
+    <li class="command-desc"><b>ROLL BACK: </b>Rollback command is used to undo transactions that have not already been saved to the database.</li>
+    <P class="syntax-head">Syntax:</P>
+    <p class="syntax">ROLLBACK;</p>
+    <P class="syntax-head">Example:</P>
+    <img src="img/TCL_ROLLBACK.png" alt="rollback_tcl">
+    <!-- EXAMPLE -->
+    <li class="command-desc"><b>SAVEPOINT: </b>It is used to roll the transaction back to a certain point without rolling back the entire transaction.</li>
+    <P class="syntax-head">Syntax:</P>
+    <P class="syntax-head">Example:</P>
+    <p class="syntax">SAVEPOINT savepoint_name;</p>
+    <!-- EXAMPLE -->
+  </section>
+
+<!-- plsql -->
+
+  <section id="plsql">
+    <h2 class="heading-3">What is PL/SQL</h2>
+    <p class="content1">PL/SQL is a block structured language that enables developers to combine the power of SQL with procedural statements.All the statements of a block are passed to oracle engine all at once which increases processing speed and decreases the traffic. </p>
+<h2 class="heading-4">Features of PL/SQL:</h2>
+<ul class="disk-list">
+  <li class="pl-list">PL/SQL is basically a procedural language, which provides the functionality of decision making, iteration and many more features of procedural programming languages.</li>
+  <li class="pl-list">PL/SQL can execute a number of queries in one block using single command.</li>
+  <li class="pl-list">One can create a PL/SQL unit such as procedures, functions, packages, triggers, and types, which are stored in the database for reuse by applications.</li>
+  <li class="pl-list">Applications written in PL/SQL are portable to computer hardware or operating system where Oracle is operational.</li>
+  <li class="pl-list">PL/SQL Offers extensive error checking.</li>
+</ul>
+<h2 class="heading-4">Structure of PL/SQL Block:</h2>
+<p class="content1">PL/SQL extends SQL by adding constructs found in procedural languages, resulting in a structural language that is more powerful than SQL. The basic unit in PL/SQL is a block. All PL/SQL programs are made up of blocks, which can be nested within each other.</p>
+<p class="syntax-pl-structure">
+  DECLARE
+<br><br>
+<span class="pl-structure">declaration statements;</span>
+<br><br>
+  BEGIN
+<br><br>
+<span class="pl-structure">executable statements</span>
+<br><br>
+  EXCEPTIONS
+<br><br>
+<span class="pl-structure">exception handling statements</span>
+<br><br>
+  END;
+</p>  
+<h2 class="heading-4">PL/SQL identifiers:</h2>
+<p class="content1">There are several PL/SQL identifiers such as variables, constants, procedures, cursors, triggers etc.</p>
+<ul>
+<li class="command-desc"><b>Variables: </b>Like several other programming languages, variables in PL/SQL must be declared prior to its use. They should have a valid name and data type as well. Syntax for declaration of variables:</li>
+<p class="syntax">variable_name datatype [NOT NULL := value];</p>
+<P class="syntax-head">Example:</P>
+<img src="img/VAR_PLSQL.png" alt="variable_plsql">
+
+<li class="command-desc"><b>Constants: </b>A constant is a value that remains unchanged throughout the program. It is a user-defined literal value. It can be declared and used instead of actual values.:</li>
+<p class="syntax">constant_name CONSTANT datatype := VALUE;</p>
+<P class="syntax-head">Example:</P>
+<img src="img/CONST_PLSQL.png" alt="constant_plsql">
+
+<>
+<li class="command-desc"><b>Procedures: </b>A procedure or function is a schema object that logically groups a set of SQL and other PL/SQL programming language statements together to perform a specific task. Procedures and functions are created in a user's schema and stored in a database for continued use.</li>
+<p class="syntax">CREATE [OR REPLACE] PROCEDURE procedure_name 
+  <br>
+  [(parameter_name [IN | OUT | IN OUT] type [, ...])] 
+  <br>
+  {IS | AS}
+  <br><br>
+  BEGIN 
+  <br>
+     procedure_body 
+     <br> <br>
+  END procedure_name;
+</p>
+<p class="syntax-head"><b>Example: </b></p>
+<img src="img/PROCEDURES.png" alt="procedure">
+
+<li class="command-desc"><b>Cursors: </b>To execute SQL statements, a work area is used by the Oracle engine for its internal processing and storing the information. This work area is private to SQL's operations. The 'Cursor' is the PL/SQL construct that allows the user to name the work area and access the stored information in it.</li>
+<h2 class="alter">Types of Cursors:</h2>
+<p class="content1">Cursors are classified depending on the circumstances in which they are opened.</p>
+<ul>
+  <li class="decimal-list"><b>Implicit Cursor: </b>If the Oracle engine opened a cursor for its internal processing it is known as an Implicit Cursor. It is created “automatically” for the user by Oracle when a query is executed and is simpler to code.</li>
+  <li class="decimal-list"><b>Explicit Cursor: </b>A Cursor can also be opened for processing data through a PL/SQL block, on demand. Such a user-defined cursor is known as an Explicit Cursor.</li>
+</ul>
+<p class="alter">General syntax for creating a Cursor:</p>
+
+<p class="alter">* Declare a cursor:</p>
+<p class="syntax">CURSOR cursor_name IS select_statement;</p>
+
+<p class="alter">* Open the cursor:</p>
+<p class="syntax">OPEN cursor_name;</p>
+
+<p class="alter">* Fetching the cursor:</p>
+<p class="syntax">FETCH cursor_name INTO variable_list;</p>
+
+<p class="alter">* Close the cursor:</p>
+<p class="syntax">CLOSE cursor_name;</p>
+
+<p class="syntax-head">Complete Cursor syntax:</p>
+<p class="syntax">DECLARE variables;
+  <br>
+  <span class="pl-structure"> records;</span>
+  <br>
+  <span class="pl-structure">create a cursor;</span>
+  <br>
+  BEGIN 
+  <br>
+  <span class="pl-structure">OPEN cursor;</span>
+  <br> 
+  <span class="pl-structure">FETCH cursor;</span>
+  <br>
+  <span class="pl-structure">process the records;</span>
+  <br>
+  <span class="pl-structure">CLOSE cursor;</span>
+  <br> 
+  END;
+</p>
+
+<!-- example -->
+
+<li class="command-desc"><b>Triggers: </b>Triggers are stored programs, which are automatically executed or fired when some event occurs. It could be defined on the table, view, schema, or database with which the event is associated.</li>
+<h3 class="heading-4">Advantages of Triggers</h3>
+  <ol>
+    <li class="list">Trigger generates some derived column values automatically.</li>
+    <li class="list">Enforces referential integrity</li>
+    <li class="list">Event logging and storing information on table access</li>
+    <li class="list">Imposing security authorizations</li>
+    <li class="list">Preventing invalid transactions</li>
+  </ol>
+
+  <p class="syntax-head">Syntax:</p>
+<p class="syntax">CREATE [OR REPLACE ] TRIGGER trigger_name<br>  
+    {BEFORE | AFTER | INSTEAD OF }  <br>
+    {INSERT [OR] | UPDATE [OR] | DELETE} <br> 
+    [OF col_name]  <br>
+    ON table_name  <br>
+    [REFERENCING OLD AS o NEW AS n]  <br>
+    [FOR EACH ROW]  <br>
+    WHEN (condition)   <br>
+    DECLARE <br>
+       Declaration-statements <br>
+    BEGIN  <br>
+       Executable-statements <br>
+    EXCEPTION <br>
+       Exception-handling-statements <br>
+    END;</p>
+
+    <p class="syntax-head">Example:</p>
+    <img src="img/TRIGGER.png" alt="triggeres">
+</section>
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Scroll to top</button>
+
+<!-- <a class="link_btn" href="page_2.html">Next</a> -->
+</div>
+</div>
+
+<script>
+  let mybutton = document.getElementById("myBtn");
+  
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+
+const sections = document.querySelectorAll("section[id]");
+
+window.addEventListener("scroll", navHighlighter);
+
+function navHighlighter() {
+  
+  let scrollY = window.pageYOffset;
+
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight;
+  
+    const sectionTop = (current.getBoundingClientRect().top + window.pageYOffset) - 50;
+    sectionId = current.getAttribute("id");
+    if (
+      scrollY > sectionTop &&
+      scrollY <= sectionTop + sectionHeight
+    ){
+      document.querySelector(".navigation a[href*=" + sectionId + "]").classList.add("active");
+    } else {
+      document.querySelector(".navigation a[href*=" + sectionId + "]").classList.remove("active");
+    }
+  });
+}
+
+  </script>
+</body>
+  </html>
