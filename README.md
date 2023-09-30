@@ -1,6 +1,7 @@
 
 # Project Title
-I'm a full stack developer....
+This is an introduction website of DBMS(Data Base Management System) <br>
+This was my 4th semester assigment in college
 
 ## 🔗 Links
 
